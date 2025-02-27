@@ -1,0 +1,37 @@
+package com.Easy;
+import java.util.*;
+
+public class UnionOfArrays {
+
+	public static void main(String[] args) 
+	{
+		
+          Scanner s=new Scanner(System.in);
+          int n=s.nextInt();
+          int a[]=new int[n];
+          int m=s.nextInt();
+          int b[]=new int[m];
+          List<Integer>union=new ArrayList<>();
+          for(int i=0;i<n;i++)
+          {
+        	  a[i]=s.nextInt();
+          }
+          for(int i=0;i<m;i++)
+          {
+        	  b[i]=s.nextInt();
+        	  
+          }
+          Arrays.sort(a);
+          Arrays.sort(b);
+          int low=0;
+          int high=0;
+          while(low<n && high<m)
+          {
+        	  if(a[low]<=b[high])
+        	  {
+        		  
+        	  }
+          }
+	}
+
+}
