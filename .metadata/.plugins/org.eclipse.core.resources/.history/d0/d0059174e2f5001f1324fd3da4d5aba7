@@ -1,0 +1,75 @@
+package com.Easy;
+import java.util.*;
+
+public class FourSum 
+{
+	public static List<List<Integer>> fourSum(int a[],int k)
+	{
+		Arrays.sort(a);
+		List<List<Integer>>res=new ArrayList<>();
+		for(int i=0;i<a.length;i++)
+		{
+			if(i>0 && a[i]==a[i-1])
+			{
+				continue;
+			}
+			for(int j=i+1;j<a.length;j++)
+			{
+				if(j>i+1 && a[j]==a[j-1])
+				{
+					continue;
+				}
+				int k1=j+1;
+				int l=a.length-1;
+				while(k1<l)
+				{
+					int sum=a[i]+a[j]+a[k1]+a[l];//should use long or long long based On Constarints
+					if(sum<k1)
+					{
+						k1++;
+					}
+					else if(sum>k1)
+					{
+						l--;
+					}
+					else
+					{
+						List<Integer>ans=new ArrayList<>();
+						ans.add(a[i]);
+						ans.add(a[j]);
+						ans.add(a[k1]);
+						ans.add(a[l]);
+						res.add(ans);
+						k1++;
+						l--;
+						while(k1<l && a[k1]==a[k1-1])
+						{
+							k1++;
+						}
+						while(k1<l && a[l]==a[l+1])
+						{
+							l--;
+						}
+					}
+				}
+				return res;
+			}
+		}
+	}
+
+	public static void main(String[] args) 
+	{
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		int a[]=new int[n];
+		for(int i=0;i<n;i++)
+		{
+			a[i]=s.nextInt();
+		}
+		int k=s.nextInt();
+		List<List<Integer>>res=fourSum(a,k);
+		System.out.println(res);
+
+	}
+
+}

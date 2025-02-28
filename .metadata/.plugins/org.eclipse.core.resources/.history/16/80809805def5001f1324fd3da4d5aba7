@@ -18,7 +18,7 @@ public class TwoSum {
 		int k=s.nextInt();
 		int low=0;
 		int high=n-1;
-		while(low<high)
+		while(i<j)
 		{
 			if(a[low]+a[high]==k)
 			{
